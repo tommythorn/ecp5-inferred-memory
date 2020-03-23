@@ -1,17 +1,18 @@
 
 
 Info: Logic utilisation before packing:
-Info:     Total LUT4s:      6831/83640     8%
-Info:         logic LUTs:   3759/83640     4%
+Info:     Total LUT4s:       111/83640     0%
+Info:         logic LUTs:    111/83640     0%
 Info:         carry LUTs:      0/83640     0%
-Info:           RAM LUTs:   2048/41820     4%
-Info:          RAMW LUTs:   1024/20910     4%
+Info:           RAM LUTs:      0/41820     0%
+Info:          RAMW LUTs:      0/20910     0%
 
-Info:      Total DFFs:       242/83640     0%
+Info:      Total DFFs:       222/83640     0%
 
 Info: Packing IOs..
 Info: pin 'clk48$tr_io' constrained to Bel 'X71/Y0/PIOA'.
 Info: pin 'tx$tr_io' constrained to Bel 'X6/Y95/PIOA'.
+Info: pin 'td[0]$tr_io' constrained to Bel 'X15/Y95/PIOB'.
 Info: pin 'td[19]$tr_io' constrained to Bel 'X0/Y56/PIOC'.
 Info: pin 'td[18]$tr_io' constrained to Bel 'X0/Y47/PIOB'.
 Info: pin 'td[9]$tr_io' constrained to Bel 'X0/Y35/PIOD'.
@@ -23,7 +24,6 @@ Info: pin 'td[4]$tr_io' constrained to Bel 'X6/Y95/PIOB'.
 Info: pin 'td[3]$tr_io' constrained to Bel 'X0/Y17/PIOB'.
 Info: pin 'td[2]$tr_io' constrained to Bel 'X126/Y50/PIOC'.
 Info: pin 'td[1]$tr_io' constrained to Bel 'X13/Y95/PIOB'.
-Info: pin 'td[0]$tr_io' constrained to Bel 'X15/Y95/PIOB'.
 Info: pin 'td[17]$tr_io' constrained to Bel 'X0/Y56/PIOD'.
 Info: pin 'td[16]$tr_io' constrained to Bel 'X0/Y50/PIOC'.
 Info: pin 'td[15]$tr_io' constrained to Bel 'X0/Y56/PIOA'.
@@ -44,16 +44,16 @@ Info: Packing unpaired FFs into a SLICE...
 Info: Generating derived timing constraints...
 Info: Promoting globals...
 Info:     promoting clock net clk48$TRELLIS_IO_IN to global network
-Info: Checksum: 0x12147d2d
+Info: Checksum: 0x17ca43de
 
 Info: Annotating ports with timing budgets for target frequency 12.00 MHz
-Info: Checksum: 0xfa84ef4f
+Info: Checksum: 0x8c1a2307
 
 Info: Device utilisation:
-Info: 	       TRELLIS_SLICE:  3567/41820     8%
+Info: 	       TRELLIS_SLICE:    63/41820     0%
 Info: 	          TRELLIS_IO:    23/  365     6%
 Info: 	                DCCA:     1/   56     1%
-Info: 	              DP16KD:     0/  208     0%
+Info: 	              DP16KD:    16/  208     7%
 Info: 	          MULT18X18D:     0/  156     0%
 Info: 	              ALU54B:     0/   78     0%
 Info: 	             EHXPLLL:     0/    4     0%
@@ -77,206 +77,179 @@ Info: 	     TRELLIS_ECLKBUF:     0/    8     0%
 Info: 	        ECLKBRIDGECS:     0/    2     0%
 
 Info: Placed 23 cells based on constraints.
-Info: Creating initial analytic placement for 1662 cells, random placement wirelen = 274151.
-Info:     at initial placer iter 0, wirelen = 1215
-Info:     at initial placer iter 1, wirelen = 551
-Info:     at initial placer iter 2, wirelen = 523
-Info:     at initial placer iter 3, wirelen = 522
+Info: Creating initial analytic placement for 77 cells, random placement wirelen = 14012.
+Info:     at initial placer iter 0, wirelen = 518
+Info:     at initial placer iter 1, wirelen = 513
+Info:     at initial placer iter 2, wirelen = 526
+Info:     at initial placer iter 3, wirelen = 513
 Info: Running main analytical placer.
-Info:     at iteration #1, type TRELLIS_SLICE: wirelen solved = 518, spread = 47816, legal = 49252; time = 0.12s
-Info:     at iteration #2, type TRELLIS_SLICE: wirelen solved = 2568, spread = 26818, legal = 29035; time = 0.13s
-Info:     at iteration #3, type TRELLIS_SLICE: wirelen solved = 4946, spread = 27191, legal = 29571; time = 0.13s
-Info:     at iteration #4, type TRELLIS_SLICE: wirelen solved = 5896, spread = 27638, legal = 29637; time = 0.13s
-Info:     at iteration #5, type TRELLIS_SLICE: wirelen solved = 6472, spread = 28305, legal = 29793; time = 0.13s
-Info:     at iteration #6, type TRELLIS_SLICE: wirelen solved = 7208, spread = 27463, legal = 30234; time = 0.13s
-Info:     at iteration #7, type TRELLIS_SLICE: wirelen solved = 8336, spread = 28463, legal = 30671; time = 0.13s
-Info: HeAP Placer Time: 1.79s
-Info:   of which solving equations: 1.02s
-Info:   of which spreading cells: 0.10s
-Info:   of which strict legalisation: 0.04s
+Info:     at iteration #1, type DP16KD: wirelen solved = 513, spread = 2381, legal = 3037; time = 0.00s
+Info:     at iteration #1, type TRELLIS_SLICE: wirelen solved = 2331, spread = 2396, legal = 2449; time = 0.00s
+Info:     at iteration #1, type ALL: wirelen solved = 515, spread = 3337, legal = 3775; time = 0.01s
+Info:     at iteration #2, type DP16KD: wirelen solved = 867, spread = 3141, legal = 3791; time = 0.00s
+Info:     at iteration #2, type TRELLIS_SLICE: wirelen solved = 2530, spread = 2579, legal = 2619; time = 0.00s
+Info:     at iteration #2, type ALL: wirelen solved = 519, spread = 3167, legal = 3450; time = 0.01s
+Info:     at iteration #3, type DP16KD: wirelen solved = 812, spread = 2927, legal = 3578; time = 0.00s
+Info:     at iteration #3, type TRELLIS_SLICE: wirelen solved = 2553, spread = 2633, legal = 2645; time = 0.00s
+Info:     at iteration #3, type ALL: wirelen solved = 581, spread = 2953, legal = 3399; time = 0.01s
+Info:     at iteration #4, type DP16KD: wirelen solved = 814, spread = 2847, legal = 3705; time = 0.00s
+Info:     at iteration #4, type TRELLIS_SLICE: wirelen solved = 2525, spread = 2630, legal = 2648; time = 0.00s
+Info:     at iteration #4, type ALL: wirelen solved = 552, spread = 2989, legal = 3574; time = 0.01s
+Info:     at iteration #5, type DP16KD: wirelen solved = 801, spread = 2835, legal = 3247; time = 0.00s
+Info:     at iteration #5, type TRELLIS_SLICE: wirelen solved = 2361, spread = 2453, legal = 2481; time = 0.00s
+Info:     at iteration #5, type ALL: wirelen solved = 587, spread = 2947, legal = 3328; time = 0.01s
+Info:     at iteration #6, type DP16KD: wirelen solved = 730, spread = 2762, legal = 3275; time = 0.00s
+Info:     at iteration #6, type TRELLIS_SLICE: wirelen solved = 2523, spread = 2610, legal = 2624; time = 0.00s
+Info:     at iteration #6, type ALL: wirelen solved = 574, spread = 2915, legal = 3357; time = 0.01s
+Info:     at iteration #7, type DP16KD: wirelen solved = 806, spread = 2763, legal = 3319; time = 0.00s
+Info:     at iteration #7, type TRELLIS_SLICE: wirelen solved = 2454, spread = 2518, legal = 2537; time = 0.00s
+Info:     at iteration #7, type ALL: wirelen solved = 586, spread = 2808, legal = 3548; time = 0.01s
+Info:     at iteration #8, type DP16KD: wirelen solved = 799, spread = 2692, legal = 3407; time = 0.00s
+Info:     at iteration #8, type TRELLIS_SLICE: wirelen solved = 2439, spread = 2537, legal = 2556; time = 0.00s
+Info:     at iteration #8, type ALL: wirelen solved = 607, spread = 2810, legal = 3276; time = 0.01s
+Info:     at iteration #9, type DP16KD: wirelen solved = 853, spread = 2907, legal = 3685; time = 0.00s
+Info:     at iteration #9, type TRELLIS_SLICE: wirelen solved = 2561, spread = 2680, legal = 2696; time = 0.00s
+Info:     at iteration #9, type ALL: wirelen solved = 609, spread = 2978, legal = 3748; time = 0.01s
+Info:     at iteration #10, type DP16KD: wirelen solved = 897, spread = 2927, legal = 3354; time = 0.00s
+Info:     at iteration #10, type TRELLIS_SLICE: wirelen solved = 2334, spread = 2368, legal = 2409; time = 0.00s
+Info:     at iteration #10, type ALL: wirelen solved = 619, spread = 2814, legal = 3318; time = 0.01s
+Info:     at iteration #11, type DP16KD: wirelen solved = 875, spread = 2869, legal = 3310; time = 0.00s
+Info:     at iteration #11, type TRELLIS_SLICE: wirelen solved = 2422, spread = 2484, legal = 2506; time = 0.00s
+Info:     at iteration #11, type ALL: wirelen solved = 641, spread = 2674, legal = 3507; time = 0.01s
+Info:     at iteration #12, type DP16KD: wirelen solved = 820, spread = 2699, legal = 3509; time = 0.00s
+Info:     at iteration #12, type TRELLIS_SLICE: wirelen solved = 2767, spread = 2783, legal = 2825; time = 0.00s
+Info:     at iteration #12, type ALL: wirelen solved = 672, spread = 2746, legal = 3520; time = 0.01s
+Info:     at iteration #13, type DP16KD: wirelen solved = 871, spread = 2758, legal = 3594; time = 0.00s
+Info:     at iteration #13, type TRELLIS_SLICE: wirelen solved = 2687, spread = 2693, legal = 2724; time = 0.00s
+Info:     at iteration #13, type ALL: wirelen solved = 658, spread = 2602, legal = 3253; time = 0.01s
+Info:     at iteration #14, type DP16KD: wirelen solved = 820, spread = 2655, legal = 3289; time = 0.00s
+Info:     at iteration #14, type TRELLIS_SLICE: wirelen solved = 2381, spread = 2391, legal = 2418; time = 0.00s
+Info:     at iteration #14, type ALL: wirelen solved = 685, spread = 2659, legal = 3495; time = 0.01s
+Info:     at iteration #15, type DP16KD: wirelen solved = 889, spread = 2707, legal = 3252; time = 0.00s
+Info:     at iteration #15, type TRELLIS_SLICE: wirelen solved = 2494, spread = 2515, legal = 2550; time = 0.00s
+Info:     at iteration #15, type ALL: wirelen solved = 692, spread = 2581, legal = 3194; time = 0.01s
+Info:     at iteration #16, type DP16KD: wirelen solved = 937, spread = 2574, legal = 3618; time = 0.00s
+Info:     at iteration #16, type TRELLIS_SLICE: wirelen solved = 2981, spread = 2989, legal = 3011; time = 0.00s
+Info:     at iteration #16, type ALL: wirelen solved = 725, spread = 2523, legal = 3434; time = 0.01s
+Info:     at iteration #17, type DP16KD: wirelen solved = 938, spread = 2500, legal = 3342; time = 0.00s
+Info:     at iteration #17, type TRELLIS_SLICE: wirelen solved = 2879, spread = 2897, legal = 2909; time = 0.00s
+Info:     at iteration #17, type ALL: wirelen solved = 762, spread = 2484, legal = 3339; time = 0.01s
+Info:     at iteration #18, type DP16KD: wirelen solved = 986, spread = 2451, legal = 3617; time = 0.00s
+Info:     at iteration #18, type TRELLIS_SLICE: wirelen solved = 3095, spread = 3120, legal = 3141; time = 0.00s
+Info:     at iteration #18, type ALL: wirelen solved = 796, spread = 2427, legal = 3320; time = 0.01s
+Info:     at iteration #19, type DP16KD: wirelen solved = 995, spread = 2442, legal = 3183; time = 0.00s
+Info:     at iteration #19, type TRELLIS_SLICE: wirelen solved = 2805, spread = 2826, legal = 2857; time = 0.00s
+Info:     at iteration #19, type ALL: wirelen solved = 864, spread = 2427, legal = 3224; time = 0.01s
+Info:     at iteration #20, type DP16KD: wirelen solved = 953, spread = 2426, legal = 3232; time = 0.00s
+Info:     at iteration #20, type TRELLIS_SLICE: wirelen solved = 2911, spread = 2918, legal = 2967; time = 0.00s
+Info:     at iteration #20, type ALL: wirelen solved = 868, spread = 2461, legal = 3217; time = 0.01s
+Info: HeAP Placer Time: 0.33s
+Info:   of which solving equations: 0.18s
+Info:   of which spreading cells: 0.06s
+Info:   of which strict legalisation: 0.02s
 
 Info: Running simulated annealing placer for refinement.
-Info:   at iteration #1: temp = 0.000000, timing cost = 1605, wirelen = 29035
-Info:   at iteration #5: temp = 0.000000, timing cost = 1163, wirelen = 26546
-Info:   at iteration #10: temp = 0.000000, timing cost = 1245, wirelen = 25886
-Info:   at iteration #15: temp = 0.000000, timing cost = 1255, wirelen = 25712
-Info:   at iteration #20: temp = 0.000000, timing cost = 1190, wirelen = 25659
-Info:   at iteration #21: temp = 0.000000, timing cost = 1189, wirelen = 25655 
-Info: SA placement time 2.47s
+Info:   at iteration #1: temp = 0.000000, timing cost = 260, wirelen = 3194
+Info:   at iteration #5: temp = 0.000000, timing cost = 294, wirelen = 2336
+Info:   at iteration #10: temp = 0.000000, timing cost = 289, wirelen = 2327
+Info:   at iteration #13: temp = 0.000000, timing cost = 288, wirelen = 2314 
+Info: SA placement time 0.07s
 
-Info: Max frequency for clock '$glbnet$clk48$TRELLIS_IO_IN': 32.61 MHz (PASS at 12.00 MHz)
+Info: Max frequency for clock '$glbnet$clk48$TRELLIS_IO_IN': 80.68 MHz (PASS at 12.00 MHz)
 
-Info: Max delay <async>                             -> posedge $glbnet$clk48$TRELLIS_IO_IN: 18.60 ns
-Info: Max delay posedge $glbnet$clk48$TRELLIS_IO_IN -> <async>                            : 8.08 ns
+Info: Max delay <async>                             -> posedge $glbnet$clk48$TRELLIS_IO_IN: 18.72 ns
+Info: Max delay posedge $glbnet$clk48$TRELLIS_IO_IN -> <async>                            : 10.73 ns
 
 Info: Slack histogram:
-Info:  legend: * represents 5 endpoint(s)
-Info:          + represents [1,5) endpoint(s)
-Info: [ 52671,  54097) |+
-Info: [ 54097,  55523) | 
-Info: [ 55523,  56949) | 
-Info: [ 56949,  58375) | 
-Info: [ 58375,  59801) |*+
-Info: [ 59801,  61227) | 
-Info: [ 61227,  62653) |+
-Info: [ 62653,  64079) | 
-Info: [ 64079,  65505) |+
-Info: [ 65505,  66931) |+
-Info: [ 66931,  68357) |***********+
-Info: [ 68357,  69783) |**************************+
-Info: [ 69783,  71209) |*******************************************+
-Info: [ 71209,  72635) |************************************************************ 
-Info: [ 72635,  74061) |***********************************+
-Info: [ 74061,  75487) |****************+
-Info: [ 75487,  76913) |***+
-Info: [ 76913,  78339) |**+
-Info: [ 78339,  79765) |***+
-Info: [ 79765,  81191) |****************+
-Info: Checksum: 0x520fc395
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 64616,  65467) |+
+Info: [ 65467,  66318) | 
+Info: [ 66318,  67169) | 
+Info: [ 67169,  68020) | 
+Info: [ 68020,  68871) | 
+Info: [ 68871,  69722) | 
+Info: [ 69722,  70573) | 
+Info: [ 70573,  71424) |*************+
+Info: [ 71424,  72275) |******************+
+Info: [ 72275,  73126) |******************+
+Info: [ 73126,  73977) |*****+
+Info: [ 73977,  74828) |*****************+
+Info: [ 74828,  75679) |**************************************** 
+Info: [ 75679,  76530) |**************************************** 
+Info: [ 76530,  77381) |**********************************+
+Info: [ 77381,  78232) |**********************+
+Info: [ 78232,  79083) |**************************************+
+Info: [ 79083,  79934) |******************+
+Info: [ 79934,  80785) |************+
+Info: [ 80785,  81636) |************************************************************ 
+Info: Checksum: 0xcb0e3100
 Info: Routing globals...
 Info:     routing clock net $glbnet$clk48$TRELLIS_IO_IN using global 0
 
 Info: Routing..
 Info: Setting up routing queue.
-Info: Routing 30896 arcs.
+Info: Routing 739 arcs.
 Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
 Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
-Info:       1000 |        0        999 |    0   999 |     29897|       0.07       0.07|
-Info:       2000 |        0       1999 |    0  1000 |     28897|       0.09       0.17|
-Info:       3000 |        4       2995 |    4   996 |     27904|       0.19       0.36|
-Info:       4000 |        9       3990 |    5   995 |     26920|       0.19       0.54|
-Info:       5000 |       12       4987 |    3   997 |     25930|       0.18       0.73|
-Info:       6000 |       16       5983 |    4   996 |     24945|       0.19       0.92|
-Info:       7000 |       29       6970 |   13   987 |     24593|       0.21       1.12|
-Info:       8000 |       37       7962 |    8   992 |     23631|       0.21       1.33|
-Info:       9000 |       46       8953 |    9   991 |     22666|       0.22       1.56|
-Info:      10000 |       55       9944 |    9   991 |     21710|       0.20       1.76|
-Info:      11000 |       70      10929 |   15   985 |     20770|       0.21       1.97|
-Info:      12000 |       88      11911 |   18   982 |     19859|       0.23       2.20|
-Info:      13000 |      116      12883 |   28   972 |     18986|       0.23       2.43|
-Info:      14000 |      131      13868 |   15   985 |     18400|       0.25       2.69|
-Info:      15000 |      159      14840 |   28   972 |     17781|       0.25       2.94|
-Info:      16000 |      181      15818 |   22   978 |     16842|       0.30       3.24|
-Info:      17000 |      198      16801 |   17   983 |     15867|       0.30       3.54|
-Info:      18000 |      228      17771 |   30   970 |     14938|       0.34       3.88|
-Info:      19000 |      251      18748 |   23   977 |     13972|       0.32       4.20|
-Info:      20000 |      277      19722 |   26   974 |     13140|       0.29       4.49|
-Info:      21000 |      328      20671 |   51   949 |     12746|       0.32       4.81|
-Info:      22000 |      382      21617 |   54   946 |     11868|       0.36       5.17|
-Info:      23000 |      523      22476 |  141   859 |     11276|       0.44       5.61|
-Info:      24000 |      654      23345 |  131   869 |     10683|       0.42       6.03|
-Info:      25000 |      766      24233 |  112   888 |     10176|       0.41       6.45|
-Info:      26000 |      886      25113 |  120   880 |      9841|       0.51       6.95|
-Info:      27000 |     1058      25941 |  172   828 |      9320|       0.56       7.52|
-Info:      28000 |     1248      26751 |  190   810 |      9204|       0.53       8.05|
-Info:      29000 |     1394      27605 |  146   854 |     10180|       0.52       8.57|
-Info:      30000 |     1482      28517 |   88   912 |     10249|       0.47       9.04|
-Info:      31000 |     1562      29437 |   80   920 |      9478|       0.48       9.52|
-Info:      32000 |     1754      30245 |  192   808 |      8940|       0.61      10.13|
-Info:      33000 |     1895      31104 |  141   859 |      8700|       0.50      10.63|
-Info:      34000 |     2057      31942 |  162   838 |      8577|       0.59      11.23|
-Info:      35000 |     2196      32803 |  139   861 |      8129|       0.56      11.79|
-Info:      36000 |     2391      33608 |  195   805 |      7798|       0.62      12.41|
-Info:      37000 |     2558      34441 |  167   833 |      7571|       0.58      12.99|
-Info:      38000 |     2720      35279 |  162   838 |      7256|       0.58      13.57|
-Info:      39000 |     2939      36060 |  219   781 |      6936|       0.83      14.40|
-Info:      40000 |     3123      36876 |  184   816 |      7597|       0.61      15.01|
-Info:      41000 |     3261      37738 |  138   862 |      7016|       0.56      15.57|
-Info:      42000 |     3415      38584 |  154   846 |      7781|       0.62      16.19|
-Info:      43000 |     3537      39462 |  122   878 |      7094|       0.69      16.88|
-Info:      44000 |     3766      40233 |  229   771 |      6898|       0.80      17.68|
-Info:      45000 |     3984      41015 |  218   782 |      8032|       0.71      18.39|
-Info:      46000 |     4128      41871 |  144   856 |      7675|       0.61      19.00|
-Info:      47000 |     4245      42754 |  117   883 |      7672|       0.52      19.52|
-Info:      48000 |     4335      43664 |   90   910 |      6997|       0.59      20.11|
-Info:      49000 |     4516      44483 |  181   819 |      6905|       0.69      20.80|
-Info:      50000 |     4732      45267 |  216   784 |      6642|       0.80      21.60|
-Info:      51000 |     4929      46070 |  197   803 |      6135|       0.75      22.34|
-Info:      52000 |     4929      47070 |    0  1000 |      5135|       0.12      22.47|
-Info:      53000 |     4929      48070 |    0  1000 |      4135|       0.13      22.59|
-Info:      54000 |     4929      49070 |    0  1000 |      3135|       0.13      22.72|
-Info:      55000 |     4929      50070 |    0  1000 |      2135|       0.13      22.85|
-Info:      56000 |     4929      51070 |    0  1000 |      1135|       0.13      22.98|
-Info:      57000 |     4929      52070 |    0  1000 |       135|       0.13      23.11|
-Info:      57134 |     4929      52205 |    0   135 |         0|       0.12      23.24|
+Info:        783 |       22        761 |   22   761 |         0|       0.39       0.39|
 Info: Routing complete.
-Info: Router1 time 23.24s
-Info: Checksum: 0x41e8fcc7
+Info: Router1 time 0.39s
+Info: Checksum: 0xf43757b1
 
 Info: Critical path report for clock '$glbnet$clk48$TRELLIS_IO_IN' (posedge -> posedge):
 Info: curr total
-Info:  0.5  0.5  Source dut.addr_r_TRELLIS_FF_Q_4_SLICE.Q0
-Info:  3.5  4.0    Net dut.addr_r[5] budget 13.616000 ns (17,54) -> (26,26)
-Info:                Sink dut.memory.5.9.0_DO_LUT4_B_C_L6MUX21_Z_D1_PFUMX_Z_SLICE.M1
-Info:  0.3  4.2  Source dut.memory.5.9.0_DO_LUT4_B_C_L6MUX21_Z_D1_PFUMX_Z_SLICE.OFX1
-Info:  4.1  8.3    Net dut.memory.5.9.0_DO_LUT4_B_C budget 15.128000 ns (26,26) -> (4,63)
-Info:                Sink dut.memory.0.25.0_DO_3_PFUMX_C0_SLICE.D0
-Info:  0.4  8.7  Source dut.memory.0.25.0_DO_3_PFUMX_C0_SLICE.OFX0
-Info:  0.0  8.7    Net dut.memory.0.25.0_DO_3_PFUMX_C0_Z budget 0.000000 ns (4,63) -> (4,63)
-Info:                Sink dut.memory.0.25.0_DO_3_PFUMX_C0_SLICE.FXB
-Info:  0.2  9.0  Source dut.memory.0.25.0_DO_3_PFUMX_C0_SLICE.OFX1
-Info:  2.4 11.4    Net dut.memory.0.25.0_DO_3_PFUMX_C0_Z_L6MUX21_D1_Z budget 15.128000 ns (4,63) -> (25,53)
-Info:                Sink dut.memory.0.19.0_DO_3_LUT4_B_Z_PFUMX_C0_SLICE.D1
-Info:  0.4 11.8  Source dut.memory.0.19.0_DO_3_LUT4_B_Z_PFUMX_C0_SLICE.OFX0
-Info:  0.0 11.8    Net dut.memory.0.19.0_DO_3_LUT4_B_Z_PFUMX_C0_Z budget 0.000000 ns (25,53) -> (25,53)
-Info:                Sink dut.memory.0.19.0_DO_3_LUT4_B_Z_PFUMX_C0_SLICE.FXB
-Info:  0.2 12.0  Source dut.memory.0.19.0_DO_3_LUT4_B_Z_PFUMX_C0_SLICE.OFX1
-Info:  1.8 13.8    Net dut.memory.0.19.0_DO_3_LUT4_B_Z_PFUMX_C0_Z_L6MUX21_D1_Z budget 11.345000 ns (25,53) -> (6,47)
-Info:                Sink dut.memory.0.6.0_DO_3_LUT4_C_Z_LUT4_D_Z_L6MUX21_SD_D0_PFUMX_Z_SLICE.M1
-Info:  0.3 14.1  Source dut.memory.0.6.0_DO_3_LUT4_C_Z_LUT4_D_Z_L6MUX21_SD_D0_PFUMX_Z_SLICE.OFX1
-Info:  0.6 14.7    Net dut.memory.0.6.0_DO_3_LUT4_C_Z_LUT4_D_Z_L6MUX21_SD_Z_L6MUX21_D1_Z budget 11.345000 ns (6,47) -> (7,47)
-Info:                Sink dut.memory.0.56.0_DO_1_LUT4_B_Z_PFUMX_C0_Z_L6MUX21_SD_Z_LUT4_C_SLICE.D0
-Info:  0.2 15.0  Source dut.memory.0.56.0_DO_1_LUT4_B_Z_PFUMX_C0_Z_L6MUX21_SD_Z_LUT4_C_SLICE.F0
-Info:  0.1 15.1    Net dut.memory.2.6.0_DO_1_LUT4_B_Z_LUT4_A_Z_L6MUX21_SD_Z_LUT4_C_Z[0] budget 11.345000 ns (7,47) -> (7,47)
-Info:                Sink dut.memory.0.56.0_DO_1_LUT4_B_Z_PFUMX_C0_Z_L6MUX21_SD_Z_LUT4_C_SLICE.DI0
-Info:  0.0 15.1  Setup dut.memory.0.56.0_DO_1_LUT4_B_Z_PFUMX_C0_Z_L6MUX21_SD_Z_LUT4_C_SLICE.DI0
-Info: 2.6 ns logic, 12.5 ns routing
+Info:  5.8  5.8  Source dut.memory.0.0.0.DOB0
+Info:  3.1  8.9    Net result[0] budget 77.297997 ns (17,46) -> (26,22)
+Info:                Sink dut.memory.10.0.0.ADB1
+Info:  0.2  9.1  Setup dut.memory.10.0.0.ADB1
+Info: 6.0 ns logic, 3.1 ns routing
 
 Info: Critical path report for cross-domain path '<async>' -> 'posedge $glbnet$clk48$TRELLIS_IO_IN':
 Info: curr total
 Info:  0.0  0.0  Source td[2]$tr_io.O
-Info:  7.0  7.0    Net td[2]$TRELLIS_IO_IN budget 41.549000 ns (126,50) -> (3,42)
+Info:  7.0  7.0    Net td[2]$TRELLIS_IO_IN budget 41.549000 ns (126,50) -> (4,40)
 Info:                Sink funct3_LUT4_D_2_SLICE.C1
 Info:  0.2  7.2  Source funct3_LUT4_D_2_SLICE.F1
-Info:  0.1  7.4    Net td_LUT4_D_Z[2] budget 41.285999 ns (3,42) -> (3,42)
+Info:  0.0  7.3    Net td_LUT4_D_Z[2] budget 41.285999 ns (4,40) -> (4,40)
 Info:                Sink funct3_LUT4_D_2_SLICE.DI1
-Info:  0.0  7.4  Setup funct3_LUT4_D_2_SLICE.DI1
-Info: 0.2 ns logic, 7.1 ns routing
+Info:  0.0  7.3  Setup funct3_LUT4_D_2_SLICE.DI1
+Info: 0.2 ns logic, 7.0 ns routing
 
 Info: Critical path report for cross-domain path 'posedge $glbnet$clk48$TRELLIS_IO_IN' -> '<async>':
 Info: curr total
-Info:  0.5  0.5  Source parity2_LUT4_C_SLICE.Q1
-Info:  4.0  4.5    Net tx$TRELLIS_IO_OUT budget 82.810997 ns (7,45) -> (6,95)
+Info:  0.5  0.5  Source parity2_LUT4_C_SLICE.Q0
+Info:  4.5  5.1    Net tx$TRELLIS_IO_OUT budget 82.807999 ns (13,33) -> (6,95)
 Info:                Sink tx$tr_io.I
-Info: 0.5 ns logic, 4.0 ns routing
+Info: 0.5 ns logic, 4.5 ns routing
 
-Info: Max frequency for clock '$glbnet$clk48$TRELLIS_IO_IN': 66.30 MHz (PASS at 12.00 MHz)
+Info: Max frequency for clock '$glbnet$clk48$TRELLIS_IO_IN': 109.61 MHz (PASS at 12.00 MHz)
 
-Info: Max delay <async>                             -> posedge $glbnet$clk48$TRELLIS_IO_IN: 7.37 ns
-Info: Max delay posedge $glbnet$clk48$TRELLIS_IO_IN -> <async>                            : 4.55 ns
+Info: Max delay <async>                             -> posedge $glbnet$clk48$TRELLIS_IO_IN: 7.27 ns
+Info: Max delay posedge $glbnet$clk48$TRELLIS_IO_IN -> <async>                            : 5.05 ns
 
 Info: Slack histogram:
-Info:  legend: * represents 5 endpoint(s)
-Info:          + represents [1,5) endpoint(s)
-Info: [ 68249,  68952) |+
-Info: [ 68952,  69655) | 
-Info: [ 69655,  70358) |*+
-Info: [ 70358,  71061) | 
-Info: [ 71061,  71764) |+
-Info: [ 71764,  72467) | 
-Info: [ 72467,  73170) | 
-Info: [ 73170,  73873) | 
-Info: [ 73873,  74576) |+
-Info: [ 74576,  75279) |***+
-Info: [ 75279,  75982) |****************+
-Info: [ 75982,  76685) |************************************+
-Info: [ 76685,  77388) |************************************************************ 
-Info: [ 77388,  78091) |************************************************+
-Info: [ 78091,  78794) |*************************+
-Info: [ 78794,  79497) |***+
-Info: [ 79497,  80200) |**+
-Info: [ 80200,  80903) |*+
-Info: [ 80903,  81606) |****+
-Info: [ 81606,  82309) |***************+
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 74210,  74615) |***********************+
+Info: [ 74615,  75020) |*****************************************+
+Info: [ 75020,  75425) |*******************+
+Info: [ 75425,  75830) |**********************+
+Info: [ 75830,  76235) |************************************************+
+Info: [ 76235,  76640) |**************************************+
+Info: [ 76640,  77045) |**+
+Info: [ 77045,  77450) |***+
+Info: [ 77450,  77855) | 
+Info: [ 77855,  78260) | 
+Info: [ 78260,  78665) |+
+Info: [ 78665,  79070) |**+
+Info: [ 79070,  79475) |********************+
+Info: [ 79475,  79880) |*******************************************+
+Info: [ 79880,  80285) |*********************************************************+
+Info: [ 80285,  80690) |***************************************************+
+Info: [ 80690,  81095) |***********************************+
+Info: [ 81095,  81500) |**************************+
+Info: [ 81500,  81905) |***************************************************+
+Info: [ 81905,  82310) |************************************************************ 
 Info: Using pin H15 as VREF for bank 6
 Info: Using pin C15 as VREF for bank 7

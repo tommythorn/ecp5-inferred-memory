@@ -2,8 +2,6 @@
  * 20200321 Tommy Thorn
  */
 
-`define MSB 31
-
 module top
   (
    input wire clk48,
@@ -13,10 +11,10 @@ module top
 
    reg         non_load = 0;
    reg [2:0]   funct3 = 0;
-   reg [`MSB:0]  addr = 0;
-   reg [`MSB:0]  memory_data = 0;
-   reg [`MSB:0]  other_data = 0;
-   wire [`MSB:0] result;
+   reg [31:0]  addr = 0;
+   reg [31:0]  memory_data = 0;
+   reg [31:0]  other_data = 0;
+   wire [31:0] result;
    reg [7:0]   parity8 = 0;
    reg [1:0]   parity2 = 0;
 
@@ -27,7 +25,7 @@ module top
    `dut dut(clk48, non_load, funct3, addr, memory_data, other_data, result);
 
    always @(posedge clk48) parity8 <= {
-                                       ^result[`MSB:28],
+                                       ^result[31:28],
                                        ^result[27:24],
                                        ^result[23:20],
                                        ^result[19:16],
@@ -44,22 +42,35 @@ module memory
    input  wire        clock,
    input  wire        non_load,
    input  wire [ 2:0] funct3,
-   input  wire [`MSB:0] addr,
-   input  wire [`MSB:0] memory_data,
-   input  wire [`MSB:0] other_data,
+   input  wire [31:0] addr,
+   input  wire [31:0] memory_data,
+   input  wire [31:0] other_data,
 
-   output wire [`MSB:0] result
+   output wire [31:0] result
    );
 
 
-   reg [`MSB:0]         memory[0:1023]; // 4 KiB
-   reg [`MSB:0]         addr_r = 0; // 4 KiB
+   reg [31:0]         memory[0:8191];
 
+`ifdef write_first
+   // 131 MHz when using sysMEM (DP16KD) memories
+   // 297- MHz when using tiny LUTRAMs
+   reg [31:0]         addr_r;
    always @(posedge clock) begin
       if (non_load)
         memory[addr] <= memory_data;
       addr_r <= addr;
    end
-
    assign result = memory[addr_r];
+`else // read_first
+   // 131 MHz when using sysMEM (DP16KD) memories
+   // 483- MHz when using tiny LUTRAMs
+   reg [31:0]         readdata;
+   always @(posedge clock) begin
+      if (non_load)
+        memory[addr] <= memory_data;
+      readdata <= memory[readdata];
+   end
+   assign result = readdata;
+`endif
 endmodule
